@@ -70,11 +70,10 @@
 
 /* Unhide indicator button */
 .host-console-unhide-btn {
-    position: absolute;
-    right: 16px;
-    /* Position the arrow above the console so it stays visible when console slides down */
-    top: -32px;
-    bottom: auto;
+    /* Position as a fixed control near the bottom-right of the main content area */
+    position: fixed;
+    right: 420px; /* approx: align near the edge of the center content, left of inventory sidebar */
+    bottom: 12px; /* slightly above bottom so it feels like it's hovering over the hidden console */
     background: #000;
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -82,8 +81,9 @@
     font-size: 0.8rem;
     color: var(--text-dim);
     cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    display: none; /* hidden by default; shown only when console is collapsed */
 }
 
 .host-console-unhide-btn:hover {
@@ -92,6 +92,10 @@
 }
 
 /* Only show indicator when collapsed; otherwise hide */
+.host-console.collapsed .host-console-unhide-btn {
+    display: inline-flex !important;
+}
+
 .host-console:not(.collapsed) .host-console-unhide-btn {
     display: none !important;
 }
