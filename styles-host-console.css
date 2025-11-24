@@ -50,15 +50,15 @@
     width: 100%;
     min-width: 0;
     margin-top: auto;
+    /* Smooth slide in/out */
+    transform: translateY(0);
+    transition: transform 0.25s ease-in-out;
 }
 
 /* New: collapsed state – only show a slim bar with an unhide button */
 .host-console.collapsed {
-    height: 26px;
-    flex: 0 0 26px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    overflow: visible;
+    /* Slide almost completely out of view, leaving a thin edge to anchor the arrow */
+    transform: translateY(calc(100% - 26px));
 }
 
 /* Hide normal content when collapsed */
@@ -71,16 +71,18 @@
 /* Unhide indicator button */
 .host-console-unhide-btn {
     position: absolute;
-    right: 10px;
-    bottom: 4px;
+    right: 16px;
+    /* Overhang above the hidden console edge */
+    bottom: calc(100% - 4px);
     background: #000;
     border: 1px solid var(--border);
     border-radius: 999px;
-    padding: 3px 10px;
-    font-size: 0.7rem;
+    padding: 4px 10px;
+    font-size: 0.8rem;
     color: var(--text-dim);
     cursor: pointer;
     z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .host-console-unhide-btn:hover {

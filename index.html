@@ -160,7 +160,7 @@
                             <button id="export-data-btn" class="small-btn">Export JSON</button>
                             <button id="import-data-btn" class="small-btn">Import JSON</button>
                             <input type="file" id="import-data-input" accept="application/json" style="display:none;">
-                            <button id="host-console-hide-btn" class="small-btn">Hide</button>
+                            <button id="host-console-hide-btn" class="small-btn" title="Hide Chat / Console">▼</button>
                         </div>
                     </div>
                     <div id="host-console-log" class="host-console-log"></div>
@@ -173,8 +173,13 @@
                         />
                         <button id="chat-send-btn" class="small-btn">Send</button>
                     </div>
-                    <button id="host-console-unhide-btn" class="host-console-unhide-btn" style="display:none;">
-                        Show Chat / Console
+                    <button
+                        id="host-console-unhide-btn"
+                        class="host-console-unhide-btn"
+                        style="display:none;"
+                        title="Show Chat / Console"
+                    >
+                        ▲
                     </button>
                 </div>
 
