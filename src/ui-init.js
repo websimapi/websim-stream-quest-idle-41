@@ -77,12 +77,15 @@ export function initListeners(uiManager) {
         hideBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             hostConsole.classList.add('collapsed');
-            // indicator button is shown via CSS when collapsed
+            // Show the floating unhide indicator when collapsed
+            unhideBtn.style.display = 'block';
         });
 
         unhideBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             hostConsole.classList.remove('collapsed');
+            // Hide the floating unhide indicator when expanded
+            unhideBtn.style.display = 'none';
         });
     }
 

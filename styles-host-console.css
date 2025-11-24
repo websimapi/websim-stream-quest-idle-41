@@ -70,7 +70,8 @@
 
 /* Unhide indicator button */
 .host-console-unhide-btn {
-    /* CHANGED: make this fixed so it stays visible even when the console is translated off-screen */
+    /* Fixed so it sits over the bottom of the viewport, independent of console transform */
+    display: none;
     position: fixed;
     right: 16px;
     bottom: 8px;
@@ -88,44 +89,6 @@
 .host-console-unhide-btn:hover {
     color: var(--primary);
     border-color: var(--primary);
-}
-
-/* Only show indicator when collapsed; otherwise hide */
-.host-console:not(.collapsed) .host-console-unhide-btn {
-    display: none !important;
-}
-
-/* Hide input row by default; only show in chat-view */
-.host-console .host-console-input-row {
-    display: none;
-}
-
-.host-console-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
-    color: var(--text-dim);
-    margin-bottom: 4px;
-}
-
-.host-console-toggle-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-dim);
-    font-size: 0.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 2px 4px;
-}
-
-.host-console-toggle-btn:hover {
-    color: var(--primary);
-}
-
-.host-data-controls {
-    display: flex;
-    gap: 6px;
 }
 
 /* Scrollable log inside fixed-height console */
