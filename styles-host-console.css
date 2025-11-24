@@ -70,10 +70,10 @@
 
 /* Unhide indicator button */
 .host-console-unhide-btn {
-    position: absolute;
-    right: 16px;
-    /* Position the arrow so it overhangs above the hidden console */
-    bottom: -18px;
+    /* Use fixed positioning so it stays visible even when the console slides out */
+    position: fixed;
+    right: 24px;
+    bottom: 12px;
     background: #000;
     border: 1px solid var(--border);
     border-radius: 999px;
@@ -81,7 +81,7 @@
     font-size: 0.8rem;
     color: var(--text-dim);
     cursor: pointer;
-    z-index: 10;
+    z-index: 300;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
