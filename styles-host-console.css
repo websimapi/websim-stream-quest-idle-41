@@ -58,7 +58,7 @@
 /* New: collapsed state – only show a slim bar with an unhide button */
 .host-console.collapsed {
     /* Slide almost completely out of view, leaving a thin edge to anchor the arrow */
-    transform: translateY(calc(100% - 26px));
+    transform: translateY(calc(100% - 24px));
 }
 
 /* Hide normal content when collapsed */
@@ -72,8 +72,8 @@
 .host-console-unhide-btn {
     position: absolute;
     right: 16px;
-    /* Overhang above the hidden console edge */
-    bottom: calc(100% - 4px);
+    /* Keep the arrow visible inside the small exposed strip when collapsed */
+    bottom: 4px;
     background: #000;
     border: 1px solid var(--border);
     border-radius: 999px;
